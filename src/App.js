@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import RestaurantCard from './RestaurantCard';
+import Plov from './image/download.jpg'
+
 
 function App() {
+  const [cardData,setcardData]=useState([
+    {
+      id:1,
+      name:"Plov",
+      imageUrl:Plov,
+      rating:4,
+      cuisine:"Azerbaycan metbexi"
+    },
+    {
+      id:2,
+      name:"Bozbas",
+      imageUrl:Plov,
+      rating:5,
+      cuisine:"Azerbaycan metbexi"
+    },
+    {
+      id:3,
+      name:"Dolma",
+      imageUrl:Plov,
+      rating:2.5,
+      cuisine:"Azerbaycan metbexi"
+    }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      {
+        cardData.map((data)=>(
+          <RestaurantCard key={data.id} name={data.name} imageUrl={data.imageUrl} rating={data.rating} cuisine={data.cuisine} />
+        ))
+      }
     </div>
   );
 }
