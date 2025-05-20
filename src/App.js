@@ -1,30 +1,17 @@
 import { useState } from 'react';
 import './App.css';
 import RestaurantCard from './RestaurantCard';
-import Plov from './image/download.jpg'
+import Restaurant from './image/restaurant.avif';
+
 
 
 function App() {
   const [cardData,setcardData]=useState([
     {
       id:1,
-      name:"Plov",
-      imageUrl:Plov,
+      name:"Lorem ipsum dolor",
+      imageUrl:Restaurant,
       rating:4,
-      cuisine:"Azerbaycan metbexi"
-    },
-    {
-      id:2,
-      name:"Bozbas",
-      imageUrl:Plov,
-      rating:5,
-      cuisine:"Azerbaycan metbexi"
-    },
-    {
-      id:3,
-      name:"Dolma",
-      imageUrl:Plov,
-      rating:2.5,
       cuisine:"Azerbaycan metbexi"
     }
   ])
